@@ -1,0 +1,38 @@
+<div class = "main-contents">
+<div class = "information">
+<h3>スケジュール詳細</h3>
+</div>
+ 
+    <table>
+      <tr>
+        <th>タイトル</th>
+        <td><%= @user.tytle %></td>
+      </tr>
+      <tr>
+        <th>開始日</th>
+        <td><%= @user.start_at %></td>
+      </tr>
+      <tr>
+        <th>終了日</th>
+        <td><%= @user.end_at %></td>
+      </tr>
+      <tr>
+        <th>終日</th>
+        <td><% if @user.all_day == true %>
+            ○  
+         <% else @user.all_day == false %>
+          
+         <% end %></td>
+      </tr>
+        <th>スケジュールメモ</th>
+        <td><%= @user.memo %></td>
+       <tr> 
+    </table>
+    <div>
+      <ul>
+        <li><%= link_to "スケジュール一覧に戻る", :users %></li>
+        <li><%= link_to "編集", controller: 'users', action: 'edit'  %></li>
+        <li><%= link_to "削除", @user, method: :delete, data: { confirm: "本当に削除しますか？" } %></li>
+      </ul>
+    </div>
+</div> 
